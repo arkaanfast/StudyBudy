@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:studybudy/screens/welcomePage.dart';
+import 'package:studybudy/screens/welcome_page.dart';
 
 void main() {
   runApp(MyApp());
