@@ -37,10 +37,10 @@ class WelcomePage extends StatelessWidget {
           // ignore: deprecated_member_use
           child: RaisedButton(
             // style: OutlinedButton.styleFrom(primary: Colors.deepPurpleAccent),
-            padding: EdgeInsets.fromLTRB(100, 20, 100, 20),
+            padding: EdgeInsets.fromLTRB(110, 15, 110, 15),
             color: Colors.deepPurpleAccent,
             shape: RoundedRectangleBorder(
-              borderRadius: new BorderRadius.circular(18.0),
+              borderRadius: new BorderRadius.circular(10.0),
             ),
             onPressed: () {
               Navigator.push(
