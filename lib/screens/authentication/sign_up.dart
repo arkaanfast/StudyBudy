@@ -19,7 +19,7 @@ class _SignUpState extends State<SignUp> {
             Row(
               children: [
                 Container(
-                  margin: EdgeInsets.only(top: 180.0, left: 15.0),
+                  margin: EdgeInsets.only(top: 180.0, left: 25.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -35,7 +35,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 150.0, left: 20.0),
+                  margin: EdgeInsets.only(top: 150.0, left: 5.0),
                   alignment: Alignment.center,
                   child: SvgPicture.asset(
                     'assets/images/signUp.svg',
@@ -89,8 +89,11 @@ class _SignUpState extends State<SignUp> {
                 borderColor: Color(0xFFB6BE878),
                 onPressed: (index) {
                   setState(() {
-                    _changeColor = [Color(0x66B6BE878), Color(0x66B6BE878)];
-                    _changeColor[index] = Color(0xFFB6BE878);
+                    _changeColor = List.generate(_changeColor.length, (idx) {
+                      if (index == idx) return Color(0xFFB6BE878);
+                      return Color(0x66B6BE878);
+                    });
+                    // _changeColor[index] = Color(0xFFB6BE878);
                     // if (index == 0) {
                     //   _changeColor[0] = Color(0xFFB6BE878);
                     //   _changeColor[1] = Color(0x66B6BE878);
@@ -98,8 +101,11 @@ class _SignUpState extends State<SignUp> {
                     //   _changeColor[1] = Color(0xFFB6BE878);
                     //   _changeColor[0] = Color(0x66B6BE878);
                     // }
-                    _isSelected = List.generate(2, (_) => false);
-                    _isSelected[index] = !_isSelected[index];
+                    _isSelected = List.generate(_isSelected.length, (idx) {
+                      if (index == idx) return true;
+                      return false;
+                    });
+                    // _isSelected[index] = !_isSelected[index];
                   });
                 },
               ),
