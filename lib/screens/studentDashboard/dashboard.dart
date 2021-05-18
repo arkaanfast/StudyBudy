@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 
-class Dashboard extends StatelessWidget {
+class Dashboard extends StatefulWidget {
+  @override
+  _DashboardState createState() => _DashboardState();
+}
+
+class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,80 +49,87 @@ class Dashboard extends StatelessWidget {
           ],
         ),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            margin: EdgeInsets.only(top: 30),
-            alignment: Alignment.center,
-            child: Text(
-              'Study Buddy',
-              style: TextStyle(
-                fontWeight: FontWeight.w900,
-                fontSize: 42,
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              margin: EdgeInsets.only(top: 30),
+              alignment: Alignment.center,
+              child: Text(
+                'Study Buddy',
+                style: TextStyle(
+                  fontWeight: FontWeight.w900,
+                  fontSize: 42,
+                ),
               ),
             ),
-          ),
-          Container(
-            margin: EdgeInsets.only(top: 20),
-            color: Colors.white,
-            child: Row(
-              children: <Widget>[
-                IconButton(
-                  splashColor: Colors.black,
-                  icon: Icon(Icons.search),
-                  onPressed: () {},
-                ),
-                Expanded(
-                  child: TextField(
-                    cursorColor: Colors.black,
-                    keyboardType: TextInputType.text,
-                    textInputAction: TextInputAction.go,
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.red)),
-                        contentPadding: EdgeInsets.symmetric(horizontal: 15),
-                        hintText: "What do you want to learn today?"),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 8.0),
-                  child: IconButton(
-                      icon: Icon(
-                    Icons.mic_none,
-                    color: Colors.black,
-                  )
-                      //backgroundColor: Colors.deepPurple,
-                      //child: Text('RD'),
+            Container(
+              margin: EdgeInsets.only(top: 20),
+              // color: Color(0xFFEDEDED),
+              child: SizedBox(
+                child: Row(
+                  children: <Widget>[
+                    IconButton(
+                      splashColor: Colors.black,
+                      icon: Icon(Icons.search),
+                      onPressed: () {},
+                    ),
+                    Expanded(
+                      child: TextField(
+                        cursorColor: Colors.black,
+                        keyboardType: TextInputType.text,
+                        textInputAction: TextInputAction.go,
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.red)),
+                            contentPadding:
+                                EdgeInsets.symmetric(horizontal: 15),
+                            hintText: "Ask me a question?"),
                       ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
+                      child: IconButton(
+                        icon: Icon(
+                          Icons.mic_none,
+                          color: Colors.black,
+                        ),
+                        onPressed: () {},
+                        //backgroundColor: Colors.deepPurple,
+                        //child: Text('RD'),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
-          ),
-          Card(
-            shadowColor: Colors.transparent,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-            color: Color(0xFFEDEDED),
-            margin: EdgeInsets.only(top: 30, left: 10, right: 10),
-            child: Container(
-              width: 324,
-              height: 140,
-              padding: EdgeInsets.only(left: 20),
+            Card(
+              shadowColor: Colors.transparent,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12)),
+              color: Color(0xFFEDEDED),
+              margin: EdgeInsets.only(top: 30, left: 10, right: 10),
+              child: Container(
+                width: 324,
+                height: 140,
+                padding: EdgeInsets.only(left: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
                       padding: EdgeInsets.only(top: 10),
-                      child: Column( children : [Text(
-                        'Attendance',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w900,
-                          fontSize: 22,
+                      child: Column(children: [
+                        Text(
+                          'Attendance',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w900,
+                            fontSize: 22,
+                          ),
                         ),
-                      ),]),
+                      ]),
                     ),
-                    Container( 
+                    Container(
                       padding: EdgeInsets.only(top: 10),
                       child: Text(
                         'Current Attendance - 75%',
@@ -153,15 +164,15 @@ class Dashboard extends StatelessWidget {
               ),
             ),
             Card(
-            shadowColor: Colors.transparent,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-            color: Color(0xFFEDEDED),
-            margin: EdgeInsets.only(top: 10, left: 10, right: 10),
-            child: Container(
-              width: 324,
-              height: 150,
-              padding: EdgeInsets.only(left: 20),
+              shadowColor: Colors.transparent,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12)),
+              color: Color(0xFFEDEDED),
+              margin: EdgeInsets.only(top: 10, left: 10, right: 10),
+              child: Container(
+                width: 324,
+                height: 150,
+                padding: EdgeInsets.only(left: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -209,7 +220,8 @@ class Dashboard extends StatelessWidget {
                 ),
               ),
             ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:studybudy/screens/dashboard.dart';
+import 'package:studybudy/screens/studentDashboard/dashboard.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -25,35 +25,37 @@ class _SignInState extends State<SignIn> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Row(
-                children: [
-                  Container(
-                    margin:
-                        EdgeInsets.only(top: blockHeight * 22.0, left: 25.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Hello,",
-                          style: TextStyle(fontSize: 28.0),
-                        ),
-                        Text(
-                          "Welcome !",
-                          style: TextStyle(fontSize: 28.0),
-                        ),
-                      ],
+              Container(
+                child: Row(
+                  children: [
+                    Container(
+                      margin:
+                          EdgeInsets.only(top: blockHeight * 22.0, left: 22.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Hello,",
+                            style: TextStyle(fontSize: 28.0),
+                          ),
+                          Text(
+                            "Welcome !",
+                            style: TextStyle(fontSize: 28.0),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 150.0, left: 5.0),
-                    alignment: Alignment.center,
-                    child: SvgPicture.asset(
-                      'assets/images/signUp.svg',
-                      width: 200,
-                      height: 170,
+                    Container(
+                      margin: EdgeInsets.only(top: 150.0, left: 5.0),
+                      alignment: Alignment.center,
+                      child: SvgPicture.asset(
+                        'assets/images/signUp.svg',
+                        width: 200,
+                        height: 170,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               Container(
                 margin: EdgeInsets.fromLTRB(30, 5, 30, 10),
@@ -130,9 +132,9 @@ class _SignInState extends State<SignIn> {
                     borderRadius: new BorderRadius.circular(10.0),
                   ),
                   onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Dashboard()));
-            },
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Dashboard()));
+                  },
                   child: Text(
                     "Sign in",
                     style: TextStyle(
