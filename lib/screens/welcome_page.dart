@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:studybudy/screens/authentication/sign_up.dart';
+import 'package:studybudy/screens/authentication/sign_in.dart';
+
 
 class WelcomePage extends StatelessWidget {
   @override
@@ -44,10 +45,10 @@ class WelcomePage extends StatelessWidget {
             ),
             onPressed: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => SignUp()));
+                  context, MaterialPageRoute(builder: (context) => SignIn()));
             },
             child: Text(
-              "Sign up",
+              "Sign in",
               style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -63,7 +64,7 @@ class WelcomePage extends StatelessWidget {
               print("pressed me");
             },
             child: Text(
-              'Sign in',
+              'Sign up',
               style: TextStyle(
                 color: Colors.deepPurpleAccent,
                 fontWeight: FontWeight.bold,
