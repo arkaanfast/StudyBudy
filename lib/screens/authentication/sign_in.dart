@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:studybudy/screens/studentDashboard/dashboard.dart';
+import '../dashboard/student_dashboard.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -139,7 +139,7 @@ class _SignInState extends State<SignIn> {
                   ),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Dashboard()));
+                        MaterialPageRoute(builder: (context) => StudentDashboard()));
                   },
                   child: Text(
                     "Sign in",

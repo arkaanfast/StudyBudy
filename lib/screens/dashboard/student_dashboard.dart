@@ -1,17 +1,24 @@
 import 'package:flutter/material.dart';
 
-class Dashboard extends StatefulWidget {
+class StudentDashboard extends StatefulWidget {
   @override
   _DashboardState createState() => _DashboardState();
 }
 
-class _DashboardState extends State<Dashboard> {
+class _DashboardState extends State<StudentDashboard> {
+  final int _currAttendance = 75;
+  final int _reqAttendance = 85;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          IconButton(icon: Icon(Icons.person_outline), onPressed: () {})
+          IconButton(
+              icon: Icon(Icons.person_outline),
+              onPressed: () {
+                print('pressed');
+              })
         ],
         iconTheme: IconThemeData(color: Colors.black),
         backgroundColor: Colors.transparent, foregroundColor: Colors.black,
@@ -35,17 +42,33 @@ class _DashboardState extends State<Dashboard> {
                 ),
               ),
             ),
-            // Container(
-            //   child: Column( crossAxisAlignment: CrossAxisAlignment.center,
-            //     children: [
-            //       FlatButton( padding: EdgeInsets.zero,
-            //         onPressed: () {},
-            //         child: Text('Dashboard', style: TextStyle(fontSize: 25),),
-            //       ),
-            //     ],
-            //   ),
-            // ),
-            ListTile(title: Text(' Dashboard', style: TextStyle(fontSize: 15)))
+            ListTile(
+              title: Text(
+                ' Dashboard',
+                style: TextStyle(fontSize: 15),
+              ),
+              onTap: () {print('pressed');},
+            ),
+            ListTile(
+              title: Text(
+                ' Attendance',
+                style: TextStyle(fontSize: 15),
+              ),
+              onTap: () {print('pressed');},
+            ),
+            ListTile(
+              title: Text(
+                ' Notes',
+                style: TextStyle(fontSize: 15),
+              ),
+              onTap: () {print('pressed');},
+            ),ListTile(
+              title: Text(
+                ' Fees',
+                style: TextStyle(fontSize: 15),
+              ),
+              onTap: () {print('pressed');},
+            ),
           ],
         ),
       ),
@@ -67,7 +90,7 @@ class _DashboardState extends State<Dashboard> {
             Container(
               margin: EdgeInsets.only(top: 20),
               // color: Color(0xFFEDEDED),
-              child: SizedBox(
+              // child: SizedBox(
                 child: Row(
                   children: <Widget>[
                     IconButton(
@@ -78,14 +101,14 @@ class _DashboardState extends State<Dashboard> {
                     Expanded(
                       child: TextField(
                         cursorColor: Colors.black,
-                        keyboardType: TextInputType.text,
-                        textInputAction: TextInputAction.go,
+                        //keyboardType: TextInputType.text,
+                        //textInputAction: TextInputAction.go,
                         decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.red)),
+                            // border: OutlineInputBorder(
+                            //     borderSide: BorderSide(color: Colors.green)),
                             contentPadding:
-                                EdgeInsets.symmetric(horizontal: 15),
-                            hintText: "Ask me a question?"),
+                                EdgeInsets.symmetric(horizontal: 10),
+                            hintText: "What do you want to learn today?"),
                       ),
                     ),
                     Padding(
@@ -103,7 +126,7 @@ class _DashboardState extends State<Dashboard> {
                   ],
                 ),
               ),
-            ),
+            // ),
             Card(
               shadowColor: Colors.transparent,
               shape: RoundedRectangleBorder(
@@ -112,7 +135,7 @@ class _DashboardState extends State<Dashboard> {
               margin: EdgeInsets.only(top: 30, left: 10, right: 10),
               child: Container(
                 width: 324,
-                height: 140,
+                height: 150,
                 padding: EdgeInsets.only(left: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -132,7 +155,7 @@ class _DashboardState extends State<Dashboard> {
                     Container(
                       padding: EdgeInsets.only(top: 10),
                       child: Text(
-                        'Current Attendance - 75%',
+                        'Current Attendance - $_currAttendance%',
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 17,
@@ -142,22 +165,26 @@ class _DashboardState extends State<Dashboard> {
                     Container(
                       padding: EdgeInsets.only(top: 10),
                       child: Text(
-                        'Required Attendance - 80%',
+                        'Required Attendance - $_reqAttendance%',
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 17,
                         ),
                       ),
                     ),
-                    Container(
-                      padding: EdgeInsets.only(top: 10),
-                      child: Text(
-                        'See More . . .',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 17,
+                    TextButton(
+                      child: Container(
+                        child: Text(
+                          'See More . . .',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 17,
+                              color: Colors.black),
                         ),
                       ),
+                      onPressed: () {
+                        print('pressed');
+                      },
                     ),
                   ],
                 ),
@@ -171,7 +198,7 @@ class _DashboardState extends State<Dashboard> {
               margin: EdgeInsets.only(top: 10, left: 10, right: 10),
               child: Container(
                 width: 324,
-                height: 150,
+                height: 165,
                 padding: EdgeInsets.only(left: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -207,9 +234,50 @@ class _DashboardState extends State<Dashboard> {
                       ),
                     ),
                     Container(
+                      //padding: EdgeInsets.only(top: 5),
+                      child: TextButton(
+                          child: Text(
+                            'See More . . .',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 17,
+                                color: Colors.black),
+                          ),
+                          onPressed: () {
+                            print('pressed');
+                          }),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Card(
+              shadowColor: Colors.transparent,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12)),
+              color: Color(0xFFEDEDED),
+              margin: EdgeInsets.only(top: 10, left: 10, right: 10),
+              child: Container(
+                width: 324,
+                height: 80,
+                padding: EdgeInsets.only(left: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
                       padding: EdgeInsets.only(top: 10),
                       child: Text(
-                        'See More . . .',
+                        'Fees',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(top: 10),
+                      child: Text(
+                        'No pending fees',
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 17,
