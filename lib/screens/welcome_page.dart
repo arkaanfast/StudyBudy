@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:studybudy/screens/authentication/sign_in.dart';
-
+import 'package:studybudy/screens/authentication/sign_up.dart';
 
 class WelcomePage extends StatelessWidget {
   @override
@@ -61,7 +61,12 @@ class WelcomePage extends StatelessWidget {
           alignment: Alignment.center,
           child: TextButton(
             onPressed: () {
-              print("pressed me");
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SignUp(),
+                ),
+              );
             },
             child: Text(
               'Sign up',

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:studybudy/screens/studentDashboard/dashboard.dart';
+import '../dashboard/student_dashboard.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -11,7 +11,11 @@ class _SignInState extends State<SignIn> {
   List<bool> _isSelected = List.generate(2, (_) => false);
   List<Color> _changeColor = [Color(0xFFB6BE878), Color(0x66B6BE878)];
   String _firstText = "USN";
+  int _charlength = 10;
+  // final usnController = TextEditingController();
+  // final emailController = TextEditingController();
   GlobalKey<FormState> _signIn = new GlobalKey<FormState>();
+  
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -60,9 +64,9 @@ class _SignInState extends State<SignIn> {
               Container(
                 margin: EdgeInsets.fromLTRB(30, 5, 30, 10),
                 child: TextFormField(
-                  validator: (String usn) =>
+                  validator: (usn) =>
                       usn.length == 0 ? "please enter" : null,
-                  maxLength: 10,
+                  maxLength: _charlength,
                   decoration: InputDecoration(labelText: _firstText),
                 ),
               ),
@@ -105,10 +109,12 @@ class _SignInState extends State<SignIn> {
                     setState(() {
                       if (index == 0) {
                         _firstText = "USN";
+                        _charlength = 10;
                         _changeColor[0] = Color(0xFFB6BE878);
                         _changeColor[1] = Color(0x66B6BE878);
                       } else {
                         _firstText = "Email";
+                        _charlength = null;
                         _changeColor[1] = Color(0xFFB6BE878);
                         _changeColor[0] = Color(0x66B6BE878);
                       }
@@ -133,7 +139,7 @@ class _SignInState extends State<SignIn> {
                   ),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Dashboard()));
+                        MaterialPageRoute(builder: (context) => StudentDashboard()));
                   },
                   child: Text(
                     "Sign in",
