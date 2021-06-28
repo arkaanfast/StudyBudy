@@ -125,7 +125,7 @@ class _SignUpState extends State<SignUp> {
                   ],
                 ),
               ),
-              SignUpTextFields(inputText: "Usn", controller: _usn),
+              SignUpTextFields(inputText: "U.S.N", controller: _usn),
               SignUpTextFields(inputText: "Phone Number", controller: _phoneNo),
               SignUpTextFields(inputText: "Email", controller: _email),
               SignUpTextFields(

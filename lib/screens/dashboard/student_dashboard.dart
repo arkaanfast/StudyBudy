@@ -28,46 +28,83 @@ class _DashboardState extends State<StudentDashboard> {
         child: ListView(
           children: [
             Container(
-              height: 80,
+              //height: 80,
               child: DrawerHeader(
-                child: Text(
-                  'Study Buddy',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 35),
+                child: Icon(
+                  Icons.mic_none,
+                  size: 100.0,
                 ),
                 decoration: BoxDecoration(
+                  shape: BoxShape.circle,
                   color: Color(0xFF635BEB),
                 ),
               ),
             ),
             ListTile(
               title: Text(
-                ' Dashboard',
-                style: TextStyle(fontSize: 15),
+                ' Attendance',
+                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
               ),
-              onTap: () {print('pressed');},
+              onTap: () {
+                print('pressed');
+              },
             ),
             ListTile(
               title: Text(
-                ' Attendance',
-                style: TextStyle(fontSize: 15),
+                ' Internals',
+                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
               ),
-              onTap: () {print('pressed');},
+              onTap: () {
+                print('pressed');
+              },
+            ),
+            ListTile(
+              title: Text(
+                ' Externals',
+                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+              ),
+              onTap: () {
+                print('pressed');
+              },
+            ),
+            ListTile(
+              title: Text(
+                ' Assignments',
+                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+              ),
+              onTap: () {
+                print('pressed');
+              },
+            ),
+            ListTile(
+              title: Text(
+                ' GPA',
+                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+              ),
+              onTap: () {
+                print('pressed');
+              },
             ),
             ListTile(
               title: Text(
                 ' Notes',
-                style: TextStyle(fontSize: 15),
+                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
               ),
-              onTap: () {print('pressed');},
-            ),ListTile(
+              onTap: () {
+                print('pressed');
+              },
+            ),
+            SizedBox(
+              height: 70,
+            ),
+            ListTile(
               title: Text(
-                ' Fees',
-                style: TextStyle(fontSize: 15),
+                ' Dark Mode',
+                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
               ),
-              onTap: () {print('pressed');},
+              onTap: () {
+                print('pressed');
+              },
             ),
           ],
         ),
@@ -87,45 +124,45 @@ class _DashboardState extends State<StudentDashboard> {
                 ),
               ),
             ),
-            Container(
+            Container(padding: EdgeInsets.symmetric(horizontal: 5.0),
               margin: EdgeInsets.only(top: 20),
               // color: Color(0xFFEDEDED),
               // child: SizedBox(
-                child: Row(
-                  children: <Widget>[
-                    IconButton(
-                      splashColor: Colors.black,
-                      icon: Icon(Icons.search),
-                      onPressed: () {},
+              child: Row(
+                children: <Widget>[
+                  // IconButton(
+                  //   splashColor: Colors.black,
+                  //   icon: Icon(Icons.search),
+                  //   onPressed: () {},
+                  // ),
+                  Expanded(
+                    child: TextField(
+                      cursorColor: Colors.black,
+                      //keyboardType: TextInputType.text,
+                      //textInputAction: TextInputAction.go,
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(25.0),
+                            ),
+                          ),
+                          prefixIcon: Icon(
+                            Icons.search,
+                            color: Colors.black,
+                          ),
+                          suffixIcon: Icon(
+                            Icons.mic_none,
+                            color: Colors.black,
+                          ),
+                          // border: OutlineInputBorder(
+                          //     borderSide: BorderSide(color: Colors.green)),
+                          contentPadding: EdgeInsets.only(top: 10.0),
+                          hintText: "What do you want to learn today?"),
                     ),
-                    Expanded(
-                      child: TextField(
-                        cursorColor: Colors.black,
-                        //keyboardType: TextInputType.text,
-                        //textInputAction: TextInputAction.go,
-                        decoration: InputDecoration(
-                            // border: OutlineInputBorder(
-                            //     borderSide: BorderSide(color: Colors.green)),
-                            contentPadding:
-                                EdgeInsets.symmetric(horizontal: 10),
-                            hintText: "What do you want to learn today?"),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 8.0),
-                      child: IconButton(
-                        icon: Icon(
-                          Icons.mic_none,
-                          color: Colors.black,
-                        ),
-                        onPressed: () {},
-                        //backgroundColor: Colors.deepPurple,
-                        //child: Text('RD'),
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
+            ),
             // ),
             Card(
               shadowColor: Colors.transparent,
