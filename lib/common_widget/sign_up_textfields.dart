@@ -4,11 +4,11 @@ class SignUpTextFields extends StatelessWidget {
   final String inputText;
   final TextEditingController controller;
   final bool isPassword;
-  final TextEditingController pass;
+  final TextEditingController? pass;
 
   SignUpTextFields({
-    @required this.inputText,
-    @required this.controller,
+    required this.inputText,
+    required this.controller,
     this.isPassword = false,
     this.pass,
   });
@@ -23,11 +23,11 @@ class SignUpTextFields extends StatelessWidget {
         child: TextFormField(
           controller: this.controller,
           validator: (value) {
-            if (value.isEmpty) {
+            if (value!.isEmpty) {
               return "Required";
             }
             if (this.isPassword && this.pass != null) {
-              if (this.controller.text != this.pass.text) {
+              if (this.controller.text != this.pass!.text) {
                 return "Passwords dont match";
               }
             }
